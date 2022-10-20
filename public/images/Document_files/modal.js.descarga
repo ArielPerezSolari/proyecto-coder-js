@@ -1,0 +1,24 @@
+import { eliminarProductoCarrito } from "../cart/cartActions.js"
+
+const modalContainer = document.getElementById('modal-container')
+const abrirCarrito = document.getElementById('open-cart')
+const cerrarCarrito = document.getElementById('close-cart')
+const modalCarrito = document.querySelector('.modal-cart')
+
+
+
+abrirCarrito.addEventListener('click', () => {
+    modalContainer.classList.remove('hidden')
+})
+
+cerrarCarrito.addEventListener('click', () => {
+    modalContainer.classList.add('hidden')
+})
+
+modalCarrito.addEventListener('click', (e) => {
+    e.stopPropagation()
+
+    if (e.target.classList.contains('eliminar')) {
+        eliminarProductoCarrito(e.target.value)
+    }
+})

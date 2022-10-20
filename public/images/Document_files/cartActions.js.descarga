@@ -1,0 +1,72 @@
+import { productos } from '../products/stock.js'
+import { actualizarTotalesCarrito } from '../cart/cartUpdate.js'
+import { getCarritoStorage } from '../../storage.js'
+let carrito = []
+
+const validarProductoRepetido = (productoId) => {
+
+    if (localStorage.getItem('carrito')) {
+        carrito = getCarritoStorage()
+    }
+
+    const productoRepetido = carrito.find(producto => producto.id === productoId)
+
+
+    if (productoRepetido) {
+        productoRepetido.cantidad++
+            const cantidadProducto = document.getElementById(`quantity${productoRepetido.id}`)
+        cantidadProducto.innerText = `Cantidad: ${productoRepetido.cantidad}`
+        actualizarTotalesCarrito(carrito)
+    } else {
+        agregarAlCarrito(productoId)
+    }
+}
+
+const agregarAlCarrito = (productoId) => {
+    const contenedorCarrito = document.getElementById('cart-container')
+    const producto = productos.find(producto => producto.id === productoId)
+
+    carrito.push(producto)
+
+    const div = document.createElement('div');
+    div.innerHTML += ` <div class="product-added">
+                            <p>Producto: ${producto.modelo} </p>
+                            <p>Precio: $${producto.precio} </p>
+                            <p id="quantity${producto.id}">Cantidad: ${producto.cantidad}</p>
+                            <button class="eliminar" id="erase${producto.id}" value="${producto.id}">X</button>
+                        </div>`
+
+    contenedorCarrito.appendChild(div)
+    actualizarTotalesCarrito(carrito)
+
+}
+
+const pintarCarrito = (carrito) => {
+    const contenedorCarrito = document.getElementById('cart-container')
+
+    contenedorCarrito.innerHTML = ""
+
+    carrito.forEach(producto => {
+        const div = document.createElement('div');
+        div.innerHTML += ` <div class="product-added">
+                                <p>Producto: ${producto.modelo} </p>
+                                <p>Precio: $${producto.precio} </p>
+                                <p id="quantity${producto.id}">Cantidad: ${producto.cantidad}</p>
+                                <button class="eliminar" id="erase${producto.id}" value="${producto.id}">X</button>
+                            </div>`
+
+        contenedorCarrito.appendChild(div)
+    });
+}
+
+
+
+const eliminarProductoCarrito = (productoId) => {
+    const carritoStorage = getCarritoStorage()
+    const carritoActualizado = carritoStorage.filter(producto => producto.id != productoId)
+
+    actualizarTotalesCarrito(carritoActualizado)
+    pintarCarrito(carritoActualizado)
+}
+
+export { validarProductoRepetido, agregarAlCarrito, pintarCarrito, eliminarProductoCarrito }

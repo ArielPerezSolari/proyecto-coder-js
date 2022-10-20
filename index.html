@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./public/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="header">
+        <nav> <span class="main-title">Guitar Shop</span>
+            <ul>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+            <span class="usuario hidden"></span>
+            <button class="hidden carrito" id="open-cart">
+                <img src="/public/images/cartsmall.png" alt=""> <span id="contador"></span>
+            </button>
+
+        </nav>
+    </header>
+
+
+    <h1>Guitarras Electricas</h1>
+
+    <section class="register" id="pantalla-registro">
+        <h2>Bienvenido a Guitar Shop</h2>
+        <p>Ingresa un usuario y una contraseña</p>
+
+        <div class="contenedor-registro">
+            <form action="#" id="form-registro">
+                <label for="usuario-registro">Ingresa tu usuario</label>
+                <input id="usuario-registro" name="usuario-registro" type="text" placeholder="Usuario" required>
+                <label for="contraseña-registro"> Ingresa una contraseña</label>
+                <input id="contraseña-registro" name="contraseña-registro" type="password" placeholder="Contraseña" required>
+                <input type="submit">
+            </form>
+        </div>
+
+    </section>
+
+    <main class="cards-container display-none" id="products-display">
+        <!-- Formato CARD
+            
+            <div class="card-frame">
+            <img src="/public/images/lespaulHoney.webp" alt="">
+            <div class="card-text">
+                <p>Modelo:</p>
+                <p>Precio:</p>
+                <p>Color:</p>
+            </div>
+            <button>Comprar</button>
+            <button>Detalle</button>
+        </div>
+
+        -->
+    </main>
+
+    <div class="modal-container hidden" id="modal-container">
+        <div class="modal-cart">
+            <h3>Carrito</h3>
+            <button id="close-cart">Cerrar</button>
+            <button id="empty-cart">Vaciar carrito</button>
+            <button id="finish">Completar compra</button>
+            <div class="cart-container" id="cart-container">
+                <!-- Formato producto en carrito
+
+                 <div class="product-added">
+                    <p>Producto: </p>
+                    <p>precio: $</p>
+                    <p>cantidad: </p>
+                </div>
+              
+            -->
+            </div>
+            <p class="total"> Total: $<span class="total" id="total-cart"> 0 </span></p>
+        </div>
+    </div>
+
+    <div class="modal-detalle hidden" id="modal-detalle">
+
+    </div>
+
+    <section id="pantalla-checkout" class="hidden">
+        <div class="modal-overlay">
+            <h2>último paso!</h2>
+            <p> ingresa tu mail asi te enviamos toda la informacion para terminar con tu pago</p>
+            <form action="" id="form-checkout">
+                <input id="email" type="email" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+    </section>
+
+
+    <script src="./src/components/modal.js" type="module"></script>
+    <script src="./src/cart/cartActions.js" type="module"></script>
+    <script src="./src/components/detalle.js" type="module"></script>
+    <script src="./src/register/registro.js" type="module"></script>
+    <script src="./src/components/checkout.js" type="module"></script>
+    <script src="./src/products/getStock.js" type="module"></script>
+    <script src="./App.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+</body>
+
+</html>
