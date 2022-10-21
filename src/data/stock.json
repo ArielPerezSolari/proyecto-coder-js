@@ -1,7 +1,7 @@
 [{
         "id": 2,
         "modelo": "Gibson - Les Paul",
-        "img": "/public/images/lespaulSun.webp",
+        "img": "./public/images/lespaulSun.webp",
         "color": "Sunburst",
         "precio": 2200,
         "cantidad": 1
@@ -9,7 +9,7 @@
     {
         "id": 3,
         "modelo": "Gibson - Les Paul",
-        "img": "/public/images/lespaulTabaco.webp",
+        "img": "./public/images/lespaulTabaco.webp",
         "color": "Tobacco",
         "precio": 2100,
         "cantidad": 1
@@ -17,7 +17,7 @@
     {
         "id": 4,
         "modelo": "Gibson - Les Paul",
-        "img": "/public/images/lespaulTea.webp",
+        "img": "./public/images/lespaulTea.webp",
         "color": "Ice Tea",
         "precio": 2600,
         "cantidad": 1
@@ -25,7 +25,7 @@
     {
         "id": 5,
         "modelo": "Fender - Stratocaster",
-        "img": "/public/images/stratocasterBlack.webp",
+        "img": "./public/images/stratocasterBlack.webp",
         "color": "Black",
         "precio": 1800,
         "cantidad": 1
@@ -33,7 +33,7 @@
     {
         "id": 6,
         "modelo": "Fender - Stratocaster",
-        "img": "/public/images/stratocasterRed.webp",
+        "img": "./public/images/stratocasterRed.webp",
         "color": "Red",
         "precio": 1800,
         "cantidad": 1
@@ -41,7 +41,7 @@
     {
         "id": 7,
         "modelo": "Fender - Stratocaster",
-        "img": "/public/images/stratocasterSunburst.webp",
+        "img": "./public/images/stratocasterSunburst.webp",
         "color": "Sunburst",
         "precio": 1900,
         "cantidad": 1
@@ -49,7 +49,7 @@
     {
         "id": 8,
         "modelo": "Gibson - SG",
-        "img": "/public/images/sgEbony.webp",
+        "img": "./public/images/sgEbony.webp",
         "color": "Ebony",
         "precio": 2000,
         "cantidad": 1
@@ -57,7 +57,7 @@
     {
         "id": 9,
         "modelo": "Gibson - SG",
-        "img": "/public/images/sgCherry.webp",
+        "img": "./public/images/sgCherry.webp",
         "color": "Cherry",
         "precio": 2100,
         "cantidad": 1
@@ -65,7 +65,7 @@
     {
         "id": 10,
         "modelo": "Gibson - SG",
-        "img": "/public/images/sgWhite.webp",
+        "img": "./public/images/sgWhite.webp",
         "color": "White",
         "precio": 1900,
         "cantidad": 1
